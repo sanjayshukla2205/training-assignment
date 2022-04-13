@@ -35,7 +35,6 @@ class HomeController @Inject()(val controllerComponents: ControllerComponents) e
 
  def DOBPost() = Action { implicit request: Request[AnyContent] =>
     Redirect(routes.HomeController.Addressform())
-
   }
 
   def Addressform(): Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
