@@ -3,7 +3,7 @@ package controllers
 import javax.inject._
 import play.api._
 import play.api.mvc._
-import views.html
+import views.html.Addressform
 
 
 /**
@@ -25,20 +25,20 @@ class HomeController @Inject()(val controllerComponents: ControllerComponents) e
   }
 
   def NamePost(): Action[AnyContent] =  Action { implicit request: Request[AnyContent] =>
-    Ok(views.html.DOB())
+    Redirect(routes.HomeController.DOB())
   }
 
   def DOB() = Action { implicit request: Request[AnyContent] =>
     Ok(views.html.DOB())
   }
 
+
  def DOBPost() = Action { implicit request: Request[AnyContent] =>
-    Ok(views.html.Addressform())
+    Redirect(routes.HomeController.Addressform())
+
   }
 
-
-
-  def Addressform() = Action { implicit request: Request[AnyContent] =>
+  def Addressform(): Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
     Ok(views.html.Addressform())
   }
 
